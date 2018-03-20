@@ -1,0 +1,49 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+    
+  <body>
+      <div id="mySidenav" class="sidenav">
+        <img src="/assets/icon.png" class="imgicon" >
+        <p>zymr-reimbursement</p>
+        <i class="fa fa-user" style="font-size:20px;color:#CFD4D8;padding: 10px 0px 0 20px ; "></i>    
+        <a href="/dashboard"> Home</a>
+        <div class="customHrforsidemenu">.</div>    
+        
+        <i class="fa fa-list-ul" style="font-size:20px;color:#CFD4D8;padding: 10px 0px 0 20px ; "></i>        
+        <a href="/billist">Bill List</a>
+        <div class="customHrforsidemenu">.</div>    
+      </div>
+    
+      <div id="main">
+        <nav>
+          <span style="cursor:pointer" (click)="openNav()">
+          <i class="fa fa-bars" style="font-size:20px;color:#F4F7FC;padding: 10px 0px 0 20px ; "></i>
+      </span>
+          <a href="/">
+        <i class="fa fa-sign-out pull-right" aria-hidden="true" style="font-size:30px;color:#FFFFFF;padding: 10px 20px 0 0px ; "></i>
+        </a>
+        <h2>BillDetails</h2>
+        <div class="customHr">.</div>
+        
+        <div class="thumb1"> 
+            <img src={{billdata.billimage}} class="imgicon center" >            
+          </div>
+          <div class="bill-page">
+           <div class="form">
+             <form class="billdetail-form">     
+               <input type="billername" placeholder="billername" [(ngModel)]="billername" name="billername" disabled="true"/>
+               <input type="billname" placeholder="billname"  [(ngModel)]="billname"  name="billname" disabled="true"/>
+               <input type="address" placeholder="address"  [(ngModel)]="address"  name="address" disabled="true"/>
+               <input type="timedate" placeholder="timedate"  [(ngModel)]="timedate"  name="timedate" disabled="true"/>
+               <input type="billprice" placeholder="billprice"  [(ngModel)]="billprice"  name="billprice" disabled="true"/>
+               <input type="useremail" placeholder="useremail"  [(ngModel)]="useremail"  name="useremail" disabled="true"/>    
+             </form>
+           </div>
+         </div>
+        </nav>
+      </div>
+   </body>
+ </html>

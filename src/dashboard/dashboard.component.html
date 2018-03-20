@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <img src="/assets/icon.png" class="imgicon">
+        <h5>zymr-reimbursement</h5>
+
+        <i class="fa fa-user" style="font-size:20px;color:#CFD4D8;padding: 10px 0px 0 20px ; "></i>
+        <a href="/dashboard"> Home</a>
+        <div class="customHrforsidemenu">.</div>
+
+        <i class="fa fa-list-ul" style="font-size:20px;color:#CFD4D8;padding: 10px 0px 0 20px ; "></i>
+        <a href="/billist">Bill List</a>
+        <div class="customHrforsidemenu">.</div>
+    </div>
+
+    <div id="main">
+        <nav>
+            <span style="cursor:pointer" (click)="openNav()">
+      <i class="fa fa-bars" style="font-size:20px;color:#F4F7FC;padding: 10px 0px 0 20px ; "></i>
+  </span>
+            <a href="/">
+    <i class="fa fa-sign-out pull-right" aria-hidden="true" style="font-size:30px;color:#FFFFFF;padding: 10px 20px 0 0px ; "></i>
+    </a>
+            <h2>UserList</h2>
+            <div class="customHr">.</div>
+        </nav>
+        <div *ngIf="istableshow">
+            <table *ngIf="userlists.length" class="table table-hover table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let userlist of userlists | paginate: { id: 'listing_pagination',
+                itemsPerPage: 5,
+                currentPage: page,
+                totalItems: totalRec }" (click)="getbilllist(userlist,$index)">
+                        <th>{{userlist.name}}</th>
+                        <th>{{userlist.emailid}}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <pagination-controls *ngIf="userlists.length" class="pull-right" id="listing_pagination" maxSize="5" directionLinks="true"
+                    (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

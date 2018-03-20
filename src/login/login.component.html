@@ -1,0 +1,18 @@
+<html>
+<head>
+  <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet" type="text/css" />-->
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+      <img src="/assets/zymr-login.png" style="padding-bottom: 10px">
+      <form class="login-form">
+        <input type="text" placeholder="emailid" [(ngModel)]="emailid" name="emailid" />
+        <input type="password" placeholder="password" [(ngModel)]="password" name="password" />
+        <button (click)="loginbtnPressed()">login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

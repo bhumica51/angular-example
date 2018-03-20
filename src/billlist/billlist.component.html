@@ -1,0 +1,73 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <img src="/assets/icon.png" class="imgicon">
+    <p>zymr-reimbursement</p>
+
+    <i class="fa fa-user" style="font-size:20px;color:#CFD4D8;padding: 10px 0px 0 20px ; "></i>
+    <a href="/dashboard"> Home</a>
+    <div class="customHrforsidemenu">.</div>
+
+    <i class="fa fa-list-ul" style="font-size:20px;color:#CFD4D8;padding: 10px 0px 0 20px ; "></i>
+    <a href="/billist">Bill List</a>
+    <div class="customHrforsidemenu">.</div>
+  </div>
+
+  <div id="main">
+    <nav>
+      <span style="cursor:pointer" (click)="openNav()">
+        <i class="fa fa-bars" style="font-size:20px;color:#F3F4F5;padding: 10px 0px 0 20px ; "></i>
+    </span>
+      <a href="/">
+      <i class="fa fa-sign-out pull-right" aria-hidden="true" style="font-size:30px;color:#F3F4F5;padding: 10px 20px 0 0px ; "></i>
+      </a>
+      <h2>Bill List</h2>
+      <div class="customHr">.</div>
+      <h5>Please enter email-id of employee for bill history</h5>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search" [(ngModel)]="emailid">
+          <button type="submit" (click)="getbilllist()">Submit</button>
+        </form>
+      </div>
+    </nav>
+    <div *ngIf="istableshow">
+      <table *ngIf="billlists?.length > 0 " class="table table-hover table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Email-id</th>
+            <th>Billername</th>
+            <th>Billname</th>
+            <th>Address</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let billlist of billlists | paginate: { id: 'listing_pagination',
+                  itemsPerPage: 5,
+                  currentPage: page,
+                  totalItems: totalRec }" (click)="showbilldetails(billlist,$index)">
+            <th>{{billlist.useremail}}</th>
+            <th>{{billlist.billername}}</th>
+            <th>{{billlist.billname}}</th>
+            <th>{{billlist.address}}</th>
+            <th>{{billlist.billprice}}</th>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="billlists?.length">
+        <pagination-controls class="pull-right" id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+
+    <p *ngIf="billlists?.length == 0" class="table table-hover table-bordered"> {{data.data}}</p>
+  </div>
+</body>
+
+</html>

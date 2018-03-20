@@ -1,0 +1,120 @@
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+   
+    top: 0; /* Stay at the top */
+    left: 0;
+    background: #3069AC;
+     /* fallback for old browsers */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s;
+    filter: alpha(opacity=50);
+     /* 0.5 second transition effect to slide in the sidenav */
+}
+.transparent{
+    background-color: transparent !important;
+  }
+    nav
+    {
+        background-color:  #3069AC;
+        height: 50px;
+        
+    }
+    iconcolor
+    {
+        font-size:30px;
+        color:#F7F7F7;
+        text-shadow:2px 2px 4px #F7F7F7;
+    }
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #FAF8F8;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 0 0 0 0px ;
+    font-size: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+ h2{
+    margin:40px 20px 0 40px;
+    
+ }
+ h5{
+    margin:-10px 20px 70px 20px;
+    color: #ECEFF1; /* fallback for old browsers */
+    
+ }
+ .customHrforsidemenu
+ {
+    width: 93%;
+    font-size: 1px;
+    color: #ECEFF1; /* fallback for old browsers */
+    line-height: 1px;
+    
+    background-color: #ECEDEE;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+ }
+    
+ .customHr {
+    width: 93%;
+    font-size: 1px;
+    color: #3069AC; /* fallback for old browsers */
+    line-height: 1px;
+    
+    background-color: #0E141B;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    
+}
+.imgicon
+{
+    width: 50%;
+    width: 50%;
+    margin:-40px 20px 20px 50px;
+    font-size: 16px;
+}
+  .table {
+    width: 93%;
+    margin:100px 20px 0 40px;
+    font-size: 16px;
+    
+}
+  pagination-controls {
+    margin-top: 10px;
+    margin-right: 40px;
+    color: #0F0A0A;
+
+    }
+   

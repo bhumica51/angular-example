@@ -1,0 +1,7 @@
+{
+    "/api" : {
+        "target" : "http://20.20.6.84:4200/zrm", // Your remote address
+        "secure" : false,
+        "logLevel" : "debug" // Making Debug Logs in console
+    }
+}
